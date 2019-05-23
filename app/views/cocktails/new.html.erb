@@ -3,11 +3,10 @@
 <hr>
 
 <%= simple_form_for @cocktail do |f| %>
-  <%= f.label :name %>
-  <%= f.input_field :name %>
-  <%= f.submit "Add Cocktail", class: "btn btn-sm btn-outline-primary rounded" %>
+  <%= f.input :name %>
+  <%= f.submit "Add Cocktail", class: "btn btn-sm btn-primary rounded" %>
 <% end %>
 
 <br>
 
-<%= link_to "Back", cocktails_path, class: "btn btn-primary btn-sm" %>
+<%= link_to "Back", cocktails_path, class: "btn btn-outline-primary btn-sm" %>

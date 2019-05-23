@@ -1,15 +1,23 @@
 <h1><%= @cocktail["name"] %></h1>
-<p>Find me in app/views/cocktail/show.html.erb</p>
+
 <hr>
 
 <h5>Ingredients</h5>
+<br>
 
 <% @cocktail.doses.each do |dose| %>
   <p><%= dose.ingredient.name %>: <%= dose.description %></p>
 <% end %>
 
-<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary rounded" %>
-<br>
-<br>
-<%= link_to "Back to all cocktails", cocktails_path, class: "btn btn-outline-primary rounded"  %>
+<hr>
 
+<h5>Add a dose</h5>
+
+<%= simple_form_for [@cocktail, Dose.new] do |f| %>
+  <%= f.input :ingredient, :collection => Ingredient.all  %>
+  <%= f.input :description %>
+  <%= f.submit "Add ingredient", class: "btn btn-primary" %>
+<% end %>
+<hr>
+<br>
+<%= link_to "Back to all cocktails", cocktails_path, class: "btn btn-outline-primary  btn-sm rounded"  %>
