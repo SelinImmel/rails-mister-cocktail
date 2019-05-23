@@ -2,10 +2,12 @@
 <p>Find me in app/views/cocktail/new.html.erb</p>
 <hr>
 
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
-  <%= f.submit "Add Cocktail", class: "btn btn-sm btn-primary rounded" %>
-<% end %>
+<div class="form-center">
+  <%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name %>
+    <%= f.submit "Add Cocktail", class: "btn btn-primary rounded" %>
+  <% end %>
+</div>
 
 <br>
 

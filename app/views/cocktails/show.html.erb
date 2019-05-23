@@ -1,23 +1,44 @@
 <h1><%= @cocktail["name"] %></h1>
 
 <hr>
+<div class="outer-body d-flex justify-content-sm-center">
+  <div class="body-left">
+    <table class="table table-borderless w-50">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="table-right"><strong>Ingredient</strong></th>
+          <th class="table-left"><strong>Description</strong></th>
+          <th></th>
+        </tr>
+      </thead>
+      <% @cocktail.doses.each do |dose| %>
+        <tbody>
+          <td></td>
+          <td class="table-right"><%= dose.ingredient.name %></td>
+          <td class="table-left"><%= dose.description %></td>
+          <td></td>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
+  <div class="body-right">
+    <img src="https://source.unsplash.com/random/200x200">
+  </div>
+</div>
 
-<h5>Ingredients</h5>
-<br>
-
-<% @cocktail.doses.each do |dose| %>
-  <p><%= dose.ingredient.name %>: <%= dose.description %></p>
-<% end %>
 
 <hr>
 
-<h5>Add a dose</h5>
+<h5>Add an ingredient</h5>
 
-<%= simple_form_for [@cocktail, Dose.new] do |f| %>
-  <%= f.input :ingredient, :collection => Ingredient.all  %>
-  <%= f.input :description %>
-  <%= f.submit "Add ingredient", class: "btn btn-primary" %>
-<% end %>
+<div class="form-center">
+  <%= simple_form_for [@cocktail, Dose.new], { class: "w-50"} do |f| %>
+    <%= f.input :ingredient, :collection => Ingredient.all  %>
+    <%= f.input :description %>
+    <%= f.submit "Add ingredient", class: "btn btn-primary" %>
+  <% end %>
+</div>
 <hr>
 <br>
-<%= link_to "Back to all cocktails", cocktails_path, class: "btn btn-outline-primary  btn-sm rounded"  %>
+<%= link_to "Back to all cocktails", cocktails_path, class: "btn btn-outline-primary  btn-sm rounded" %>
