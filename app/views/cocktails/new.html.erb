@@ -1,0 +1,13 @@
+<h1>Add a new Cocktail</h1>
+<p>Find me in app/views/cocktail/new.html.erb</p>
+<hr>
+
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.label :name %>
+  <%= f.input_field :name %>
+  <%= f.submit "Add Cocktail", class: "btn btn-sm btn-outline-primary rounded" %>
+<% end %>
+
+<br>
+
+<%= link_to "Back", cocktails_path, class: "btn btn-primary btn-sm" %>
