@@ -1,8 +1,16 @@
-img {
-  width: 300;
+.body-right {
+  height: 176px;
+  width: auto;
 }
 
-// .outer-body {
-//   display: flex;
-//   justify-content: between;
-// }
+.body-left {
+  width: 320px;
+}
+
+.table-right {
+  padding: 0; // 2px 0 0
+}
+
+.table-left {
+  padding: 0; // 0 0 2px
+}

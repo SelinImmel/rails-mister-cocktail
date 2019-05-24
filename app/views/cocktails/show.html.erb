@@ -1,29 +1,29 @@
 <h1><%= @cocktail["name"] %></h1>
 
+<div class="description w-50">
+  <p><%= @cocktail["description"] %></p>
+</div>
 <hr>
+
 <div class="outer-body d-flex justify-content-sm-center">
   <div class="body-left">
-    <table class="table table-borderless w-50">
+    <table class="table table-borderless">
       <thead>
         <tr>
-          <th></th>
           <th class="table-right"><strong>Ingredient</strong></th>
           <th class="table-left"><strong>Description</strong></th>
-          <th></th>
         </tr>
       </thead>
       <% @cocktail.doses.each do |dose| %>
         <tbody>
-          <td></td>
           <td class="table-right"><%= dose.ingredient.name %></td>
           <td class="table-left"><%= dose.description %></td>
-          <td></td>
         </tbody>
       <% end %>
     </table>
   </div>
-  <div class="body-right">
-    <%= cl_image_tag @cocktail.photo, height: 200, width: 200 %>
+  <div>
+    <%= cl_image_tag @cocktail.photo, class:"body-right" %>
   </div>
 </div>
 
@@ -41,4 +41,3 @@
 </div>
 <hr>
 <br>
-<%= link_to "Back to all cocktails", root_path, class: "btn btn-outline-primary  btn-sm rounded" %>
