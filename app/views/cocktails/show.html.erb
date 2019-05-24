@@ -33,7 +33,7 @@
 <h5>Add an ingredient</h5>
 
 <div class="form-center">
-  <%= simple_form_for [@cocktail, Dose.new], { class: "w-50"} do |f| %>
+  <%= simple_form_for [@cocktail, @dose], { class: "w-50"} do |f| %>
     <%= f.input :ingredient, :collection => Ingredient.all  %>
     <%= f.input :description %>
     <%= f.submit "Add ingredient", class: "btn btn-primary" %>
