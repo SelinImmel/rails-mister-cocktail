@@ -9,6 +9,8 @@
 require 'open-uri'
 require 'json'
 
+Dose.destroy_all
+Cocktail.destroy_all
 Ingredient.destroy_all
 url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 
